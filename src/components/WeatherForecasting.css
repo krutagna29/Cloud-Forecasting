@@ -1,0 +1,185 @@
+/* ===== Global Styling ===== */
+body.dark-mode {
+  background: linear-gradient(to bottom, #1a1a2e, #16213e);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  background: linear-gradient(to bottom, #145fd0fa, #181819);
+  transition: all 0.3s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ===== Glass Effect Container ===== */
+.weather-glass {
+  background: rgba(255, 255, 255, 0.252);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark Mode Glass */
+.dark-mode .weather-glass {
+  background: rgba(30, 30, 30, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Input Styling ===== */
+input:focus {
+  box-shadow: none;
+  border-color: #0d6efd;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* ===== Forecast Cards ===== */
+.forecast-card .card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  align-items: center;
+}
+
+.dark-mode .forecast-card .card {
+  background: rgba(50, 50, 50, 0.5);
+  color: white;
+}
+
+.forecast-card .card:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .forecast-card .card:hover {
+  background: rgba(80, 80, 80, 0.5);
+}
+
+/* ===== Animation ===== */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Styling ===== */
+
+/* Small Devices (Phones) */
+@media (max-width: 576px) {
+  .weather-glass {
+    padding: 1rem !important;
+   ;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .forecast-card .card {
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .forecast-card img {
+    width: 30px;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .weather-glass {
+    padding: 1.5rem !important;
+    margin-top: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .forecast-card .card {
+    font-size: 0.95rem;
+  }
+
+  .forecast-card img {
+    width: 35px;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .weather-glass {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  .forecast-card .card {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .forecast-card img {
+    width: 45px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Extra Large Screens (4K, ultrawide) */
+@media (min-width: 1201px) {
+  .weather-glass {
+    max-width: 800px;
+   margin: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .forecast-card .card {
+    font-size: 1.1rem;
+  }
+
+  .forecast-card img {
+    width: 50px;
+  }
+}
